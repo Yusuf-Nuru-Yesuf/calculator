@@ -1,3 +1,37 @@
+let a = null;
+let b = null;
+let operator = null;
+let result = null;
+let displayValue = "";
+
+
+const displayLastOperation = document.querySelector(".display-last-operation");
+const displayCurrentOperation = document.querySelector(".display-current-operation");
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach( button =>  button.addEventListener("click", handleButton));
+
+function handleButton(event) {
+    
+    const buttonText = event.target.textContent;
+
+    if (buttonText >= 0 && buttonText <=9) {
+        updateDisplay(buttonText);
+    }
+    else if (buttonText === "AC" ){
+        clearDisplay();
+    }
+    else if (buttonText === "X") {
+        deleteLastDigit();
+    }
+    else if (buttonText === "=") {
+        calculateResult();
+    }
+    else {
+        handleOpertor(buttonText);
+    };
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
@@ -20,16 +54,16 @@ function operate(a, b, operator) {
 
 function add (a, b) {
     return a + b ;
-  };
+  }
   
 function subtract(a, b) {
     return a - b;
-  };
+  }
 
 function multiply(a, b) {
     return a * b;
-  };
+  }
 
 function divide (a, b) {
     return a / b;
-  };
+  }
