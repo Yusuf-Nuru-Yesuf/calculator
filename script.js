@@ -32,6 +32,11 @@ function handleButton(event) {
     };
 }
 
+function updateDisplay(value) {
+    displayValue += value;
+    displayCurrentOperation.textContent = displayValue;
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
