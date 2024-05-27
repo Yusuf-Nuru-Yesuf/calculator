@@ -52,6 +52,33 @@ function deleteLastDigit() {
     displayCurrentOperation.textContent = displayValue
 }
 
+function handleOpertor(op) {
+    if (a === null) {
+        a = displayValue;
+        operator = op; 
+        displayLastOperation.textContent = `${a} ${operator}`;
+        displayValue = "";
+        displayCurrentOperation.textContent = "";
+    }
+    else if(a !== null && operator !== null && displayValue !== "") {
+        b = displayValue;
+        result = operate(a, b, operator);
+        displayLastOperation.textContent = `${a} ${operator} ${b} =`;
+        displayCurrentOperation.textContent = result;
+        a = result;
+        b = null;
+        operator = op;
+        if (operator !== "="){ 
+            displayLastOperation.textContent = `${a} ${operator}`;
+        }
+        displayValue = ""
+    }
+    else {
+        operator = op;
+        displayLastOperation.textContent = `${a} ${operator}`;
+    }
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
