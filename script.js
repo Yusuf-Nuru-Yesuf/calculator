@@ -37,6 +37,16 @@ function updateDisplay(value) {
     displayCurrentOperation.textContent = displayValue;
 }
 
+function clearDisplay() {
+    a = null;
+    b = null;
+    operator = null;
+    result = null;
+    displayCurrentOperation.textContent = "";
+    displayLastOperation.textContent = "";
+    displayValue = "";
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
