@@ -15,7 +15,7 @@ function handleButton(event) {
     
     const buttonText = event.target.textContent;
 
-    if (buttonText >= 0 && buttonText <=9) {
+    if (buttonText >= 0 && buttonText <=9 || buttonText === ".") {
         updateDisplay(buttonText);
     }
     else if (buttonText === "AC" ){
@@ -33,6 +33,7 @@ function handleButton(event) {
 }
 
 function updateDisplay(value) {
+    if (displayValue.includes(".") && value === ".") return;
     displayValue += value;
     displayCurrentOperation.textContent = displayValue;
 }
@@ -105,7 +106,7 @@ function operate(a, b, operator) {
         case "*":    
             return (multiply(a, b));         
         case "/":  
-            if (b === 0) return null;
+            if (b === 0) alert("You can't divide by 0");
             else return (divide(a, b));
         default:
             return null;
