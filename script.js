@@ -7,7 +7,7 @@ let displayValue = "";
 
 const displayLastOperation = document.querySelector(".display-last-operation");
 const displayCurrentOperation = document.querySelector(".display-current-operation");
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll("button");
 
 buttons.forEach( button =>  button.addEventListener("click", handleButton));
 

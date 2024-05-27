@@ -33,7 +33,7 @@ div.calculator {
 
 }
 
-.buttons .btn {
+.buttons button{
     margin: 3px;
     border: 5px solid black;
     height: 60px;
@@ -44,6 +44,17 @@ div.calculator {
     color: white;
 }
 
+.buttons button:hover {
+    background-color: rgb(155, 95, 36);
+    color: white;
+}
+
+.buttons .operator {
+    background-color: rgb(155, 95, 36);
+}
+.buttons .operator:hover {
+    background-color: rgb(3, 2, 1);
+}
 #clear , 
 #delete {
     width: 140px;
