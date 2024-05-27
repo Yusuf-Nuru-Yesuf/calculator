@@ -79,6 +79,19 @@ function handleOpertor(op) {
     }
 }
 
+function calculateResult(){
+    if (a !== null && operator !== null && displayValue !== "") {
+        b = displayValue;
+        result = operate(a, b, operator);
+        displayLastOperation.textContent = `${a} ${operator} ${b} =`;
+        displayCurrentOperation.textContent = result;
+        a = result;
+        b = null;
+        operator = null;
+        displayValue = "";
+    }
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
