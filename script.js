@@ -47,6 +47,11 @@ function clearDisplay() {
     displayValue = "";
 }
 
+function deleteLastDigit() {
+    displayValue = displayValue.slice(0, -1);
+    displayCurrentOperation.textContent = displayValue
+}
+
 function operate(a, b, operator) {
     
     a = Number(a);
